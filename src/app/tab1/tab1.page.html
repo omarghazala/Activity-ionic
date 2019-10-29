@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div *ngIf="!activityList">
+        <ion-card>
+            <ion-card-header>
+              <ion-skeleton-text class="skeleton-image" animated></ion-skeleton-text>
+            </ion-card-header>
+        </ion-card>
+        <ion-card>
+          <ion-card-header>
+            <ion-skeleton-text class="skeleton-image" animated></ion-skeleton-text>
+          </ion-card-header>
+        </ion-card>
+        <ion-card>
+          <ion-card-header>
+            <ion-skeleton-text class="skeleton-image" animated></ion-skeleton-text>
+          </ion-card-header>
+        </ion-card>
+    </div>
+    <ion-card [routerLink]="['activity-detail',activity.id]"
+     routerLinkActive="router-link-active"  button *ngFor="let activity of (activityList | async) ">
+      <ion-img [src]="activity.cropped"></ion-img>
+      <ion-card-header>
+        <ion-card-title>{{activity.name}}</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+</ion-content>
