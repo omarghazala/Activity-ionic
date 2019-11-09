@@ -17,7 +17,9 @@ const routes: Routes = [
           },
           { 
             path: 'activity-detail/:activityId',
-            loadChildren: '../activity-detail/activity-detail.module#ActivityDetailPageModule'
+            //loadChildren: '../activity-detail/activity-detail.module#ActivityDetailPageModule'
+            loadChildren:()=>
+            import('../activity-detail/activity-detail.module').then(m=>m.ActivityDetailPageModule)
           }
         ]
       },

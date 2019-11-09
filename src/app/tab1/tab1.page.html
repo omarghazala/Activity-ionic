@@ -24,8 +24,10 @@
           </ion-card-header>
         </ion-card>
     </div>
-    <ion-card [routerLink]="['activity-detail',activity.id]"
-     routerLinkActive="router-link-active"  button *ngFor="let activity of (activityList | async) ">
+    <ion-card
+      button *ngFor="let activity of (activityList | async)" 
+      [routerLink]="['activity-detail',activity.id]"
+      routerLinkActive="router-link-active"  >
       <ion-img [src]="activity.cropped"></ion-img>
       <ion-card-header>
         <ion-card-title>{{activity.name}}</ion-card-title>

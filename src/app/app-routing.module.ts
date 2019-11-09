@@ -6,6 +6,7 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
+  { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   // { path: 'activity-video', loadChildren: './activity-video/activity-video.module#ActivityVideoPageModule' },
  
 ];
